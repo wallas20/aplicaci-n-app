@@ -1,0 +1,162 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-y: scroll; /* Permite el desplazamiento vertical */
+}
+
+#main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.hidden {
+    display: none;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px;
+}
+
+.header button {
+    padding: 10px;
+    font-size: 16px;
+}
+
+.calendar {
+    margin-top: 20px;
+}
+
+.input-fields {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input-fields input, .product-select, #submit {
+    margin: 10px 0;
+    padding: 10px;
+    width: 200px;
+    font-size: 16px;
+    text-align: center;
+}
+
+.product-select {
+    background-color: #f0f0f0;
+    cursor: pointer;
+}
+
+#submit {
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+}
+
+#selected-products {
+    margin-top: 10px;
+}
+
+#config-view, #config-auth-view, #registro-view {
+    padding: 20px;
+    overflow-y: auto; /* Permite el desplazamiento vertical */
+    max-height: 100vh; /* Limita la altura máxima para mantener todo visible */
+}
+
+#product-list div, #months div, #days-list div, #records-list div {
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #f0f0f0;
+    cursor: pointer;
+    text-align: center;
+}
+
+.back-button {
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color: #f0f0f0;
+    cursor: pointer;
+}
+
+#product-form input, #product-form button {
+    margin: 10px 0;
+    padding: 10px;
+    width: 200px;
+    font-size: 16px;
+    text-align: center;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.product-list {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    width: 300px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.product-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin: 5px 0;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+}
+
+.product-item input {
+    width: 40px;
+    text-align: center;
+}
+
+.product-item label {
+    flex: 1;
+    margin-left: 10px;
+}
+
+.product-item input[type="number"] {
+    width: 50px;
+}
+
+.select-button {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#records-list div.bold {
+    font-weight: bold;
+}
+
+#total-ventas {
+    font-weight: bold;
+    margin-top: 20px;
+    font-size: 20px;
+}

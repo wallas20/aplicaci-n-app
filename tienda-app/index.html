@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Tienda</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="main">
+        <div id="calendar-view">
+            <div class="header">
+                <button onclick="openConfigAuth()">Configuración</button>
+                <button onclick="openRegistro()">Registro</button>
+            </div>
+            <div class="calendar">
+                <input type="date" id="selected-date" onchange="updateSelectedDate()" disabled>
+                <input type="time" id="selected-time" onchange="updateSelectedTime()" disabled>
+            </div>
+            <div class="input-fields">
+                <input type="text" id="persona" placeholder="Persona">
+                <input type="text" id="paciente" placeholder="Paciente">
+                <div class="product-select" onclick="openProductSelect()">Productos</div>
+                <div id="selected-products">
+                    <!-- Productos seleccionados aparecerán aquí -->
+                </div>
+                <button id="submit" onclick="submitData()">SUBIR</button>
+            </div>
+        </div>
+
+        <div id="config-auth-view" class="hidden">
+            <button class="back-button" onclick="goBack()">Volver</button>
+            <h2>Configuración</h2>
+            <input type="password" id="config-password" placeholder="CS:">
+            <button onclick="authenticateConfig()">Entrar</button>
+        </div>
+
+        <div id="config-view" class="hidden">
+            <button class="back-button" onclick="goBack()">Volver</button>
+            <h2>Configuración</h2>
+            <label for="toggle-edit-date-time">Fecha y Hora</label>
+            <input type="checkbox" id="toggle-edit-date-time" onclick="toggleEditDateTime(this)">
+            <form id="product-form" onsubmit="addProduct(event)">
+                <input type="text" id="product-name" placeholder="Nombre del Producto" required>
+                <input type="number" id="product-cost" placeholder="Costo del Producto" required>
+                <button type="submit">Agregar Producto</button>
+            </form>
+            <div id="product-list">
+                <!-- Lista de productos configurados aparecerá aquí -->
+            </div>
+        </div>
+
+        <div id="registro-view" class="hidden">
+            <button class="back-button" onclick="goBack()">Volver</button>
+            <h2>Registro</h2>
+            <div id="months">
+                <!-- Meses del año -->
+            </div>
+            <div id="days" class="hidden">
+                <button class="back-button" onclick="goBackToMonths()">Volver a los Meses</button>
+                <h3 id="selected-month">Mes</h3>
+                <div id="days-list">
+                    <!-- Días del mes seleccionado -->
+                </div>
+            </div>
+            <div id="day-records" class="hidden">
+                <button class="back-button" onclick="goBackToDays()">Volver a los Días</button>
+                <h3 id="selected-day">Día</h3>
+                <div id="records-list">
+                    <!-- Registros del día seleccionado -->
+                </div>
+                <h4 id="total-ventas">Total: S/0</h4>
+            </div>
+        </div>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>
